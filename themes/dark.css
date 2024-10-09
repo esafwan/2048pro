@@ -1,0 +1,34 @@
+:root {
+  --bg-color: #17202A;
+  --text-color: #ECF0F1;
+  --board-color: #2C3E50;
+  --cell-color: #34495E;
+  --tile-color: #2980B9;
+  --tile-2-color: #3498DB;
+  --tile-4-color: #2980B9;
+  --tile-8-color: #E67E22;
+  --tile-16-color: #D35400;
+  --tile-32-color: #C0392B;
+  --tile-64-color: #E74C3C;
+  --tile-128-color: #F1C40F;
+  --tile-256-color: #F39C12;
+  --tile-512-color: #16A085;
+  --tile-1024-color: #27AE60;
+  --tile-2048-color: #2ECC71;
+  --light-text-color: #ECF0F1;
+  --button-color: #3498DB;
+  --overlay-bg-color: rgba(0, 0, 0, 0.8);
+  --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+.tile-2 { background-color: var(--tile-2-color); color: var(--text-color); }
+.tile-4 { background-color: var(--tile-4-color); color: var(--text-color); }
+.tile-8 { background-color: var(--tile-8-color); color: var(--light-text-color); }
+.tile-16 { background-color: var(--tile-16-color); color: var(--light-text-color); }
+.tile-32 { background-color: var(--tile-32-color); color: var(--light-text-color); }
+.tile-64 { background-color: var(--tile-64-color); color: var(--light-text-color); }
+.tile-128 { background-color: var(--tile-128-color); color: var(--light-text-color); }
+.tile-256 { background-color: var(--tile-256-color); color: var(--light-text-color); }
+.tile-512 { background-color: var(--tile-512-color); color: var(--light-text-color); }
+.tile-1024 { background-color: var(--tile-1024-color); color: var(--light-text-color); }
+.tile-2048 { background-color: var(--tile-2048-color); color: var(--light-text-color); }

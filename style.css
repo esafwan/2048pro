@@ -1,0 +1,371 @@
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#game-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1000px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#score-container {
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#score-container div {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+#buttons-container {
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+#buttons-container a {
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer; 
+  transition: transform 0.1s ease-in-out;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 80px);
+  gap: 10px;
+  background-color: var(--board-color);
+  border-radius: 6px;
+  padding: 10px;
+  transition: background-color 0.5s ease, transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  margin-top: 20px; /* Reduced from 80px */
+}
+
+.cell {
+  background-color: var(--cell-color);
+  border-radius: 3px;
+  transition: background-color 0.5s ease;
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: var(--tile-color);
+  color: var(--text-color);
+  border-radius: 3px;
+  transition: background-color 0.5s ease, color 0.5s ease, transform 0.1s ease-in-out;
+}
+
+.tile-2 { background-color: var(--tile-2-color); }
+.tile-4 { background-color: var(--tile-4-color); }
+.tile-8 { background-color: var(--tile-8-color); color: var(--light-text-color); }
+.tile-16 { background-color: var(--tile-16-color); color: var(--light-text-color); }
+.tile-32 { background-color: var(--tile-32-color); color: var(--light-text-color); }
+.tile-64 { background-color: var(--tile-64-color); color: var(--light-text-color); }
+.tile-128 { background-color: var(--tile-128-color); color: var(--light-text-color); }
+.tile-256 { background-color: var(--tile-256-color); color: var(--light-text-color); }
+.tile-512 { background-color: var(--tile-512-color); color: var(--light-text-color); }
+.tile-1024 { background-color: var(--tile-1024-color); color: var(--light-text-color); }
+.tile-2048 { background-color: var(--tile-2048-color); color: var(--light-text-color); }
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+}
+
+#joystick {
+  display: grid;
+  grid-template-columns: repeat(3, 30px);
+  grid-template-rows: repeat(3, 30px);
+  gap: 2px;
+}
+
+#joystick button, #undo-button {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  border: none;
+  background-color: var(--button-color);
+  color: var(--light-text-color);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#up-arrow { grid-column: 2; grid-row: 1; }
+#left-arrow { grid-column: 1; grid-row: 2; }
+#center-button { grid-column: 2; grid-row: 2; }
+#right-arrow { grid-column: 3; grid-row: 2; }
+#down-arrow { grid-column: 2; grid-row: 3; }
+
+#center-button {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#undo-button {
+  width: auto;
+  height: 30px;
+}
+
+#score-container {
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#score-container div {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+#buttons-container {
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+#buttons-container a {
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer; 
+  transition: transform 0.1s ease-in-out;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+#buttons-container a:hover {
+  transform: scale(1.1);
+}
+
+#buttons-container a:active {
+  transform: scale(0.95);
+}
+
+#undo-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Game over buttons (keep these as buttons) */
+#game-over-reset-button,
+#game-over-undo-button {
+  background: none;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+#game-over-reset-button:hover,
+#game-over-undo-button:hover {
+  transform: scale(1.05);
+}
+
+#game-over-reset-button:active,
+#game-over-undo-button:active {
+  transform: scale(0.95);
+}
+
+#theme-select {
+  margin-top: 20px;
+  padding: 5px;
+  font-size: 16px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button styles */
+#undo-button, #theme-button, #reset-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+#undo-button:hover, #theme-button:hover, #reset-button:hover {
+  color: var(--button-color);
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
+body.dark-theme #game-board {
+  background-color: var(--dark-board-color);
+}
+
+body.dark-theme .cell {
+  background-color: var(--dark-cell-color);
+}
+
+body.dark-theme .tile {
+  color: var(--dark-text-color);
+}
+
+body.dark-theme .tile-2 {
+  background-color: var(--dark-tile-2-color);
+}
+
+body.dark-theme .tile-4 {
+  background-color: var(--dark-tile-4-color);
+}
+
+body.dark-theme #undo-button,
+body.dark-theme #theme-button,
+body.dark-theme #reset-button {
+  color: var(--dark-text-color);
+}
+
+body.dark-theme #undo-button:hover,
+body.dark-theme #theme-button:hover,
+body.dark-theme #reset-button:hover {
+  color: var(--dark-button-hover-color);
+}
+
+@media (max-width: 600px) {
+  #header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #score-container, #buttons-container {
+    flex: 0 0 100%;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  #score-container {
+    align-items: center;
+  }
+
+  #buttons-container {
+    justify-content: center;
+  }
+
+  #game-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  #score-container, #buttons-container {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  #game-container {
+    display: flex;
+    flex-direction: column;    
+    align-items:flex-start;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  #game-board {
+    margin-top: 20px;
+  }
+}
+
+/* Remove or comment out these conflicting styles */
+/*
+#score-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  flex-direction: column;
+  left:2px;
+}
+*/
+
+#game-over-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#game-over-message {
+  background-color: var(--bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add this class to show the overlay when needed */
+#game-over-overlay.show {
+  display: flex;
+}

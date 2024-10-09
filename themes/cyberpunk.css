@@ -1,0 +1,46 @@
+:root {
+  --bg-color: #0a0a1e;
+  --text-color: #00ff00;
+  --board-color: #1a1a3a;
+  --cell-color: #2a2a4a;
+  --tile-color: #3a3a5a;
+  --tile-2-color: #00ffff;
+  --tile-4-color: #ff00ff;
+  --tile-8-color: #ffff00;
+  --tile-16-color: #ff00aa;
+  --tile-32-color: #aa00ff;
+  --tile-64-color: #00ffaa;
+  --tile-128-color: #ff7700;
+  --tile-256-color: #00ff77;
+  --tile-512-color: #7700ff;
+  --tile-1024-color: #ff0077;
+  --tile-2048-color: #77ff00;
+  --light-text-color: #ffffff;
+  --button-color: #00ff00;
+  --overlay-bg-color: rgba(10, 10, 30, 0.8);
+  --shadow-color: rgba(0, 255, 0, 0.3);
+}
+
+.tile {
+  text-shadow: 0 0 5px var(--text-color);
+}
+
+#game-board {
+  box-shadow: 0 0 20px var(--text-color);
+}
+
+#buttons-container a,
+#undo-button,
+#reset-button {
+  text-shadow: 0 0 5px var(--text-color);
+}
+
+#theme-select {
+  background-color: var(--cell-color);
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+#game-over-message {
+  box-shadow: 0 0 20px var(--text-color);
+}

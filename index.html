@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048 Game with Advanced Features</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="themes/classic.css" id="theme-style">
+</head>
+<body>
+  
+  <div id="game-container">
+    <div id="header">
+        <div id="score-container">
+            <div>Score: <span id="score-value">0</span></div>
+            <div>High Score: <span id="high-score-value">0</span></div>
+        </div>
+        <div id="buttons-container">
+        <a id="undo-button" aria-label="Undo move">↩️</a>
+        <a id="reset-button" aria-label="Reset game">🔄</a>
+        </div>
+    </div>
+    <div id="game-board"></div>
+    <div id="game-over-overlay">
+      <div id="game-over-message">
+        <h2>Game Over</h2>
+        <p>Your score: <span id="final-score"></span></p>
+        <div class="game-over-buttons">
+          <button id="game-over-reset-button">Again</button>
+          <button id="game-over-undo-button">Undo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Joystick commented out
+  <div id="controls">
+    <div id="joystick">
+      <button id="up-arrow" class="arrow">▲</button>
+      <button id="left-arrow" class="arrow">◀</button>
+      <button id="center-button">+</button>
+      <button id="right-arrow" class="arrow">▶</button>
+      <button id="down-arrow" class="arrow">▼</button>
+    </div>
+  </div>
+  -->
+  <select id="theme-select">
+    <option value="classic">Classic</option>
+    <option value="dark">Dark</option>
+    <option value="cyberpunk">Cyberpunk</option>
+    <option value="grayscale">Grayscale</option>
+    <option value="outlined">Outlined</option>
+  </select>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

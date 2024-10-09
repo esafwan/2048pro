@@ -1,0 +1,34 @@
+:root {
+  --bg-color: #faf8ef;
+  --text-color: #776e65;
+  --board-color: #bbada0;
+  --cell-color: #cdc1b4;
+  --tile-color: #eee4da;
+  --tile-2-color: #eee4da;
+  --tile-4-color: #ede0c8;
+  --tile-8-color: #f2b179;
+  --tile-16-color: #f59563;
+  --tile-32-color: #f67c5f;
+  --tile-64-color: #f65e3b;
+  --tile-128-color: #edcf72;
+  --tile-256-color: #edcc61;
+  --tile-512-color: #edc850;
+  --tile-1024-color: #edc53f;
+  --tile-2048-color: #edc22e;
+  --light-text-color: #f9f6f2;
+  --button-color: #8f7a66;
+  --overlay-bg-color: rgba(255, 255, 255, 0.9);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+.tile-2 { background-color: var(--tile-2-color); color: var(--text-color); }
+.tile-4 { background-color: var(--tile-4-color); color: var(--text-color); }
+.tile-8 { background-color: var(--tile-8-color); color: var(--light-text-color); }
+.tile-16 { background-color: var(--tile-16-color); color: var(--light-text-color); }
+.tile-32 { background-color: var(--tile-32-color); color: var(--light-text-color); }
+.tile-64 { background-color: var(--tile-64-color); color: var(--light-text-color); }
+.tile-128 { background-color: var(--tile-128-color); color: var(--light-text-color); }
+.tile-256 { background-color: var(--tile-256-color); color: var(--light-text-color); }
+.tile-512 { background-color: var(--tile-512-color); color: var(--light-text-color); }
+.tile-1024 { background-color: var(--tile-1024-color); color: var(--light-text-color); }
+.tile-2048 { background-color: var(--tile-2048-color); color: var(--light-text-color); }

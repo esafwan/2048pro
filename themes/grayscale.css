@@ -1,0 +1,41 @@
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #333333;
+  --board-color: #cccccc;
+  --cell-color: #dddddd;
+  --tile-color: #eeeeee;
+  --tile-2-color: #e0e0e0;
+  --tile-4-color: #d0d0d0;
+  --tile-8-color: #c0c0c0;
+  --tile-16-color: #b0b0b0;
+  --tile-32-color: #a0a0a0;
+  --tile-64-color: #909090;
+  --tile-128-color: #808080;
+  --tile-256-color: #707070;
+  --tile-512-color: #606060;
+  --tile-1024-color: #505050;
+  --tile-2048-color: #404040;
+  --light-text-color: #ffffff;
+  --button-color: #666666;
+  --overlay-bg-color: rgba(0, 0, 0, 0.5);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.tile-2, .tile-4 {
+  color: var(--text-color);
+}
+
+.tile-8, .tile-16, .tile-32, .tile-64, .tile-128, .tile-256, .tile-512, .tile-1024, .tile-2048 {
+  color: var(--light-text-color);
+}
+
+#theme-select {
+  background-color: var(--cell-color);
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+#game-over-message {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
